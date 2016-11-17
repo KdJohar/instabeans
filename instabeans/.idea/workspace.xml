@@ -28,8 +28,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instabeans/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="112" column="25" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="25" />
+            <state relative-caret-position="447">
+              <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
               <folding>
                 <element signature="e#314#323#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instabeans/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -138,13 +138,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/instabeans/urls.py" />
-        <option value="$PROJECT_DIR$/instabeans/local_settings.py" />
         <option value="$PROJECT_DIR$/instabeans/settings.py" />
         <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/web/admin.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/instabeans/local_settings.py" />
       </list>
     </option>
   </component>
@@ -590,24 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instabeans/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="112" column="25" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="25" />
-          <folding>
-            <element signature="e#314#323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instabeans/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -668,6 +650,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="169" column="21" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instabeans/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+          <folding>
+            <element signature="e#314#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instabeans/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
