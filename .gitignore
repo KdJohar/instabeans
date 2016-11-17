@@ -1,0 +1,12 @@
+
+*.xml
+
+*.xml
+
+*.sqlite3
+
+*.pyc
+
+*.pyc
+
+instabeans/instabeans/local_settings.py
