@@ -20,7 +20,7 @@ class Seo(models.Model):
 
 
 class Client(models.Model):
-    name = models.CharField(max_length=500)
+    name = models.CharField(max_length=255)
     email = models.EmailField()
     contact_no = models.CharField(max_length=500, blank=None, null=True)
     skype_id = models.CharField(max_length=500, blank=None, null=True)
@@ -43,7 +43,7 @@ class Testimonial(models.Model):
         return self.client.name
 
 class ProjectCategory(models.Model):
-    name = models.CharField(unique=True, max_length=500)
+    name = models.CharField(unique=True, max_length=255)
 
     def __unicode__(self):
         return self.name
@@ -51,7 +51,7 @@ class ProjectCategory(models.Model):
 
 class Project(models.Model):
     client = models.ForeignKey(Client)
-    name = models.CharField(max_length=500, unique=True)
+    name = models.CharField(max_length=255, unique=True)
     category = models.ManyToManyField(ProjectCategory)
     image = models.ImageField(upload_to='projects/')
     description = models.TextField()
