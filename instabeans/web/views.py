@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response,render
+from django.template import RequestContext
 from .models import Testimonial, Project
 from .form import ContactForm
 from django.contrib import messages
@@ -30,3 +31,7 @@ def contact(request):
             messages.add_message(request, messages.INFO, 'Form Submitted')
     return render(request, 'contact.html', context)
 
+def handler404(request):
+    response = render(request, '404.html')
+    response.status_code = 404
+    return response

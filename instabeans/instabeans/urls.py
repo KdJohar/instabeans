@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from web import views as web_views
 from django.conf import settings
+from django.conf.urls import (
+    handler404, handler500
+)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,3 +29,6 @@ urlpatterns = [
     url(r'^contact/$', web_views.contact, name='contact'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = web_views.handler404
+handler500 = web_views.handler404
