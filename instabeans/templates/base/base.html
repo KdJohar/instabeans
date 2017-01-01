@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    {% include 'base/meta.html' %}
+    {% include 'base/css.html' %}
+
+</head>
+
+<body class="home-page">
+<div class="header-wrapper {% if index %}header-wrapper-home{% elif work %}header-wrapper-work{% elif contact %}header-wrapper-contact{% endif %}">
+    <!-- ******HEADER****** -->
+    {% include 'base/header.html' %}
+    {% block header_content %}
+    {% endblock %}
+</div><!--//header-wrapper-->
+
+{% block content %}
+{% endblock %}
+
+{% include 'base/footer.html' %}
+
+<!-- Main Javascript -->
+{% include 'base/js.html' %}
+{% block extra_js %}
+{% endblock %}
+
+</body>
+</html>
+
+

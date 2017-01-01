@@ -1,0 +1,310 @@
+{% extends 'base/base.html' %}
+
+{% block header_content %}
+    <div class="bg-slider-wrapper">
+        <div id="bg-slider" class="flexslider bg-slider">
+            <ul class="slides">
+                <li class="slide slide-1"></li>
+                <li class="slide slide-2"></li>
+                <li class="slide slide-3"></li>
+            </ul>
+        </div>
+    </div><!--//bg-slider-wrapper-->
+    <section id="home-promo" class="home-promo section">
+        <div class="container text-center">
+            <h2 class="title">
+                <span class="upper">We build</span>
+                <span class="middle">Web and Mobile Apps</span>
+                <span class="bottom">for startups and agencies</span>
+            </h2>
+            <a href="{% url 'contact' %}">
+                <button class="btn btn-cta btn-cta-primary" type="button">Talk to us
+            </button>
+            </a>
+
+        </div><!--//container-->
+    </section><!--//promo-->
+{% endblock %}
+
+{% block content %}
+    <!-- ******Why Section****** -->
+    <section id="who" class="who section">
+        <div class="container text-center">
+            <h2 class="title text-center">Who we are</h2>
+            <p class="text-center">Instabeans, is an IT services provider company. We offer services like Web
+                development,
+                Content Management Solutions and Creative Design from the very beginning until the end. You just need to
+                discuss your business dream with us and we will put it into the reality. Be it creating interactive
+                design
+                or an online marketing strategy, we help business concerns to integrate technology for an accelerated
+                growth
+                results. Our service basket includes Web development, Web designing, Mobile application development and
+                Online marketing.</p>
+            <div class="row benefits text-center">
+                <div class="item col-md-3 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>
+                        <h3 class="sub-title">Skilled team</h3>
+                        <div class="desc">
+                            <p>Tell your potential client why they should choose your service and how you are different
+                                from
+                                your competitors.</p>
+                        </div>
+                    </div>
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 sm-break">
+                    <div class="item-inner">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe01c;"></div>
+                        <h3 class="sub-title">Agile approach</h3>
+                        <div class="desc">
+                            <p>Tell your potential client why they should choose your service and how you are different
+                                from
+                                your competitors.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe031;"></div>
+                        <h3 class="sub-title">High quality code</h3>
+                        <div class="desc">
+                            <p>Tell your potential client why they should choose your service and how you are different
+                                from
+                                your competitors.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>
+                        <h3 class="sub-title">No overheads</h3>
+                        <div class="desc">
+                            <p>Tell your potential client why they should choose your service and how you are different
+                                from
+                                your competitors.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//who-->
+
+    {% if projects %}
+    <!-- ******Latest work section****** -->
+    <section id="latest-work" class="latest-work section">
+        <div class="container-fluid text-center">
+            <h2 class="title text-center">Our Latest Work</h2>
+            <div id="work-carousel" class="items owl-carousel owl-theme">
+                {% for project in projects %}
+                <div class="item item-1">
+                    <div class="row">
+                        <figure class="figure-container col-md-6 col-sm-12 col-xs-12">
+                            <a href="{{ project.url }}" target="_blank"></a>
+                        </figure>
+                        <div class="content col-md-6 col-sm-12 col-xs-12">
+                            <div class="content-inner">
+                                <h3 class="project-title">{{ project.name }}</h3>
+                                <ul class="meta list-unstyled">
+                                    <li><strong>Client:</strong> {{ project.client.name }}</li>
+                                    <li><strong>What we did:</strong>
+                                        {% for cat in project.category.all %}
+                                            {{ cat }}
+                                            {% if not forloop.last %}
+                                            ,
+                                            {% endif %}
+                                            {% endfor %}
+                                    </li>
+                                </ul><!--//meta-->
+                                <div class="desc">
+                                    <p>
+                                        {{ project.description }}
+                                    </p>
+                                </div><!--//desc-->
+
+                                <p class="link"><i class="fa fa-external-link"></i>
+                                    <a class="site-link" href="{{ project.url }}"
+                                                                                       target="_blank">Project link</a>
+                                </p>
+                            </div><!--//content-inner-->
+                        </div><!--//content-->
+                    </div><!--//row-->
+                </div><!--//item-->
+                {% endfor %}
+
+            </div><!--//owl-carousel-->
+            <a class="btn btn-cta btn-cta-secondary" href="{% url 'work' %}">View all case studies</a>
+        </div><!--container-fluid-->
+    </section><!--//latest-work-->
+    {% endif %}
+    <section id="services" class="services section">
+        <div class="container text-center">
+            <h2 class="title">Services</h2>
+            <p class="intro">We offer lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat</p>
+            <div class="service-items row">
+                <div class="item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="header-box">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe104;"></span>
+                        </div><!--//header-->
+                        <div class="desc">
+                            <h3 class="sub-title">UX &amp; Front-end</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae diam magna.
+                                Curabitur nibh metus, ultricies sed aliquam euismod, scelerisque eu purus. In hac
+                                habitasse platea dictumst. Suspendisse tempus elit eget libero suscipit pulvinar.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="header-box">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe0ea;"></span>
+                        </div><!--//header-->
+                        <div class="desc">
+                            <h3 class="sub-title">Back-end &amp; Database</h3>
+                            <p>Phasellus fermentum accumsan fermentum. Vestibulum elit sapien, consequat vitae auctor
+                                sit amet, elementum sed elit. Quisque ullamcorper quis augue sit amet porttitor.
+                                Maecenas ac dolor iaculis, dapibus.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="header-box">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe003;"></span>
+                        </div><!--//header-->
+                        <div class="desc">
+                            <h3 class="sub-title">Hosting</h3>
+                            <p>Cras mollis ex sed tortor finibus, a mattis risus rhoncus. Sed sodales et metus at
+                                sodales. Ut non dolor sollicitudin, venenatis mauris eget, fringilla enim. Pellentesque
+                                sed magna ante. Cras mollis tincidunt lectus vitae suscipit.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+                <div class="item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="item-inner">
+                        <div class="header-box">
+                            <span class="fs1" aria-hidden="true" data-icon="&#xe028;"></span>
+                        </div><!--//header-->
+                        <div class="desc">
+                            <h3 class="sub-title">Support</h3>
+                            <p>Aliquam efficitur, lorem blandit dapibus viverra, erat turpis placerat lacus, quis
+                                hendrerit libero sem eget dui. Integer eu diam orci. Nullam sed dictum lorem. Quisque ut
+                                lacus non enim aliquam pretium sit amet id augue.</p>
+                        </div>
+                    </div><!--//item-inner-->
+                </div><!--//item-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section>
+
+    <!-- ******Testimonials Section****** -->
+    {% if testimonials %}
+        <section id="testimonials" class="testimonials section">
+            <div class="container">
+                <h2 class="title text-center">Testimonials</h2>
+                <p class="intro text-center">Don’t just take our word for it – see what our clients are saying</p>
+                <div class="row">
+                    {% for testimonial in testimonials %}
+                        <div class="item col-md-6 col-sm-6 col-xs-12">
+                            <div class="item-inner">
+                                <div class="quote-container">
+                                    <i class="fa {% cycle 'fa-quote-left' 'fa-quote-right' %}"></i>
+                                    <blockquote class="quote">
+                                        {{ testimonial.testimonial }}
+                                    </blockquote><!--//quote-->
+                                </div><!--//quote-->
+                                <div class="meta">
+                                    <div class="profile">
+                                        <img style="width: 100px;" class="img-circle" src="{{ testimonial.client.image.url }}" alt=""/>
+                                        <a href="{{ testimonial.client.profile_url }}">
+                                            <p class="name">{{ testimonial.client.name }}<br/>
+                                                {% if testimonial.client.profile %}
+                                                    <span class="source-title">
+                                                        {{ testimonial.client.profile }}, {{ testimonial.client.company }}
+                                                    </span>
+                                                {% endif %}
+                                            </p>
+                                        </a>
+
+                                    </div><!--//profile-->
+                                </div><!--//meta-->
+                            </div><!--//item-inner-->
+                        </div><!--//item-->
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="clearfix"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div><!--//row-->
+            </div><!--//container-->
+        </section><!--//testimonials-->
+    {% endif %}
+    <!-- ******Logos Section****** -->
+    <!-- ******CTA Section****** -->
+    <section id="cta-section" class="cta-section section text-center home-cta-section">
+        <div class="container">
+            <h2 class="title">Want to have a quick chat?</h2>
+            <!-- <p class="phone contact-info">
+                <span class="intro">We are only a phone call away</span>
+                <span class="info"><a href="tel:+08001234567">+91 8236077199</a></span>
+            </p> -->
+            <p class="email contact-info">
+                <span class="intro">You can also email us</span>
+                <span class="info"><a href="mailto:info@instabeans.com">info@instabeans.com</a></span>
+            </p><!--//phone-->
+        </div><!--//container-->
+    </section><!--//cta-section-->
+
+    <!-- Contact Modal -->
+    <div class="modal modal-contact" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="contactModalLabel" class="modal-title text-center">Start your project today</h4>
+
+                </div>
+                <div class="modal-body">
+                    <ul class="contact-info list-inline text-center">
+                        <li class="email"><span class="fs1" aria-hidden="true" data-icon="&#xe010;"></span><br/> <a
+                                href="#">info@instabeans.com</a></li>
+                    </ul>
+                    <p class="text-center">
+                        Thanks for submitting, we will respond you.
+                    </p>
+                    <form id="contact-form" class="contact-form" method="post" action="#">
+                        <div class="row text-center">
+                            <div class="contact-form-inner">
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <label class="sr-only" for="cname">Your name</label>
+                                        <input type="text" class="form-control" id="cname" name="name"
+                                               placeholder="Your name" minlength="2" required>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <label class="sr-only" for="cemail">Email address</label>
+                                        <input type="email" class="form-control" id="cemail" name="email"
+                                               placeholder="Your email address" required>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <label class="sr-only" for="cmessage">Your message</label>
+                                    <textarea class="form-control" id="cmessage" name="message"
+                                              placeholder="Enter your message" rows="12" required></textarea>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <button type="submit" class="btn btn-block btn-cta btn-cta-primary">Send Message
+                                        </button>
+                                    </div>
+                                </div><!--//row-->
+                            </div>
+                        </div><!--//row-->
+                        <div id="form-messages"></div>
+                    </form><!--//contact-form-->
+                </div><!--//modal-body-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
+{% endblock %}

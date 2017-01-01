@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+
+{% block header_content %}
+    <section class="promo section">
+        <div class="container text-center">
+            <h2 class="title">Contact Us</h2>
+            <p class="intro">Get in touch if you have a project or want to find out more about our services. We'd love
+                to hear from you!</p>
+        </div><!--//container-->
+    </section><!--//promo-->
+{% endblock %}
+{% block content %}
+    <section class="contact-section section">
+        <div class="container">
+            <h2 class="title text-center">Start your project today</h2>
+            <p class="intro text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet tortor
+                consequat nisi scelerisque commodo etiam justo sapien.</p>
+            <ul class="contact-info list-inline text-center">
+
+                <li class="email"><span class="fs1" aria-hidden="true" data-icon="&#xe010;">
+
+                </span><br/> <a href="#">info@instabeans.com</a>
+                </li>
+            </ul>
+            {% if messages %}
+
+                    {% for message in messages %}
+                        <h4 class="text-center">
+                            {{ message }}
+                        </h4>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <form id="contact-form" class="contact-form form" method="post" action=".">
+                {% csrf_token %}
+                <div class="row text-center">
+                    <div class="contact-form-inner col-md-8 col-sm-12 col-xs-12 col-md-offset-2 col-sm-offset-0 xs-offset-0">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                <label class="sr-only" for="cname">Your name</label>
+                                <input type="text" class="form-control" id="cname" name="name" placeholder="Your name"
+                                       minlength="2" required>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                <label class="sr-only" for="cemail">Email address</label>
+                                <input type="email" class="form-control" id="cemail" name="email"
+                                       placeholder="Your email address" required>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                <label class="sr-only" for="cmessage">Your message</label>
+                                <textarea class="form-control" id="cmessage" name="message"
+                                          placeholder="Enter your message" rows="12" required></textarea>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                <button type="submit" class="btn btn-block btn-cta btn-cta-primary">Send Message
+                                </button>
+                            </div>
+                        </div><!--//row-->
+                    </div>
+                </div><!--//row-->
+                <div id="form-messages"></div>
+            </form><!--//contact-form-->
+        </div><!--//container-->
+    </section><!--//contact-section-->
+{% endblock %}
+
+

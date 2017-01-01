@@ -10,3 +10,12 @@
 *.pyc
 
 instabeans/instabeans/local_settings.py
+
+*.xml
+
+.DS_Store
+
+*.xml
+
+instabeans/.idea/
+media/
