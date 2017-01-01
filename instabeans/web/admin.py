@@ -7,3 +7,4 @@ admin.site.register(Project)
 admin.site.register(Client)
 admin.site.register(Testimonial)
 admin.site.register(Contact)
+
